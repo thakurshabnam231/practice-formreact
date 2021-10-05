@@ -2,7 +2,7 @@ import React,{useRef} from 'react'
 import Card from './Card'
 import classes from './Form.module.css'
 
-function Form() {
+function Form(props) {
 
  const nameRef=useRef();
  const ageRef=useRef();
@@ -16,12 +16,14 @@ function Form() {
  console.log (name,age)
     nameRef.current.value=('')
     ageRef.current.value=('');
+ 
+ props.addForm(name,age)
  }
     return (
         <div>
         
     <Card className={classes.input}>
-    <form  >
+    <form   >
            <label>username</label>
            <input type="text" ref={nameRef}/><br/>
            <label>age</label>

@@ -1,9 +1,12 @@
 import React from 'react'
 
-function List(props) {
+const List=(props)=> {
     return (
         <div>
-         
+        <ul>
+        {props.users.map((value)=>
+            (<li> {value.name}
+                {value.age} </li>))}</ul>
         </div>
     )
 }

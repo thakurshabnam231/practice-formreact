@@ -1,17 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
 import ReactDom from 'react-dom';
 import './App.css';
 import Form from './Components.js/Form';
 import List from './Components.js/List';
 
 function App() {
+  const[addData,setAddData]=useState();
+  const onAddHandler=()=>{
+setAddData((prev)=>{
+  return[prev]
+})
+  }
  
   return (
     <div className="App">
    { ReactDom.createPortal(
- <Form/>,document.getElementById("portal-root"))}
+ <Form  addForm={onAddHandler} />,document.getElementById("portal-root"))}
  {ReactDom.createPortal(
-   <List/>,document.getElementById("portal-root"))}
+   <List users={addData}/>,document.getElementById("portal-root"))}
  
    </div> 
   
