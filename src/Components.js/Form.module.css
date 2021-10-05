@@ -1,0 +1,6 @@
+.input{
+  padding :2rem;
+}
+input label{
+    font-weight:capitalize;
+}
